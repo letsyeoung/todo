@@ -4,33 +4,23 @@ import styled from 'styled-components';
 import { useTodoState } from '../TodoContext';
 
 const Head = styled.div`
-  padding: 48px 32px 24px 32px;
-  border-bottom: 1px solid #e9ecef;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 32px;
+  background:#000;
+  display: flex;
 
-  h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #343a40;
-  }
+  .date {
+    color:#fff;
+    margin:auto;
+    font-weight:bold;
+    
 
-  .day {
-    margin-top: 4px;
-    color: #868e96;
-    font-size: 21px;
-  }
-
-  .tasks-left {
-    color: #20c997;
-    font-size: 18px;
-    margin-top: 40px;
-    font-weight: bold;
   }
 `;
 
 function TodoHead() {
-  const todos = useTodoState();
-  const undoneTasks = todos.filter(todo => !todo.done);
-
+  
   const today = new Date();
   const dateString = today. toLocaleDateString('ko-KR', {
     year: 'numeric',
@@ -44,9 +34,7 @@ function TodoHead() {
 
   return (
     <Head>
-      <h1>{dateString}</h1>
-      <div className="day">{dayName}</div>
-      <div className="tasks-left">할 일 {undoneTasks.length}개 남음</div>
+      <div className="date">{dateString}, {dayName}</div>
     </Head>
   );
 };

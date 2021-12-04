@@ -31,7 +31,6 @@ const CircleButton = styled.button `
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: 0.125s all ease-in;
   ${props =>
     props.open &&
@@ -102,7 +101,6 @@ function TodoCreate() {
           <InsertForm onSubmit={onSubmit}>
             <Input 
               autoFocus 
-              placeholder="할 일을 입력 후, 엔터를 누르세여" 
               onChange={onChange}
               value={value}
               />

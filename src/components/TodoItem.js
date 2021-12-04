@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { MdDone, MdDelete } from 'react-icons/md';
+import { HiCheck, HiTrash } from 'react-icons/hi';
 
 import { useTodoDispatch } from '../TodoContext';
 
@@ -50,7 +50,7 @@ const CheckCircle = styled.div`
 
 const Text = styled.div`
   flex: 1;
-  font-size: 15px;
+  font-size: px;
   color: #495057;
   ${(props) =>
     props.done &&
@@ -67,11 +67,11 @@ function TodoItem({ id, done, text }) {
   return (
     <Item>
       <CheckCircle done={done} onClick={onToggle}>
-        {done && <MdDone />}
+        {done && <HiCheck />}
       </CheckCircle>
       <Text done={done}>{text}</Text>
       <Remove onClick={onRemove}>
-        <MdDelete />
+        <HiTrash />
       </Remove>
     </Item>
   );

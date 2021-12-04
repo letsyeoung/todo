@@ -7,15 +7,13 @@ const Head = styled.div`
   width: 100%;
   padding-top: 48px;
   padding-bottom: 32px;
-  background:#000;
+  background: #fff;
   display: flex;
 
   .date {
-    color:#fff;
+    color:#38d9a9;
     margin:auto;
     font-weight:bold;
-    
-
   }
 `;
 
